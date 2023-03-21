@@ -19,11 +19,17 @@ npm uninstall -g learn-chatgpt-api
 ## 使い方
 
 ```sh
+# 以下の情報は .env ファイルに記述することもできます(その場合文頭のexportは削除)
 export OPENAI_ORGANIZATION=<your-organization>
 export OPENAI_API_KEY=<your-api-key>
+
+# npm install -g して使う場合
 chatgpt --help
+
 # インストールしないで使う場合
 npx ts-node src/index.ts --help
+
+# VSCodeの場合、任意の箇所でブレークポイントを貼ってデバッグを開始することができます
 ```
 
 ```sh

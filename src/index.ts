@@ -7,8 +7,11 @@ import { summaryLongTextApp } from "./summaryLongText";
 import { questionAnsweringWithSearchApp } from "./questionAnsweringWithSearch";
 import { createEmbeddingApp } from "./createEmbedding";
 import { questionAnsweringWithEmbeddingApp } from "./questionAnsweringWithEmbedding";
+import * as dotenv from "dotenv";
 
 function main() {
+    dotenv.config();
+
     const program = new Command();
     program
         .description("Learn ChatGPT API By Example");

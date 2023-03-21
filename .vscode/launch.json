@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug current command",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ts-node",
+      "args": "'${workspaceFolder}/src/index.ts' ${input:command} ${input:args}",
+      "skipFiles": [
+        "<node_internals>/**",
+        "node_modules/**"
+      ],
+      "env": {
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      },
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "command",
+      "description": "Select command",
+      "options": [
+        "simple-chat",
+        "summary-and-comment",
+        "classify",
+        "summary-long-text",
+        "qa-with-search",
+        "create-embedding",
+        "qa-with-embedding",
+        "help"
+      ],
+      "default": "simple-chat"
+    },
+    {
+      "type": "promptString",
+      "id": "args",
+      "description": "Input args"
+    }
+  ],
+}
